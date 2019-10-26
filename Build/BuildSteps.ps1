@@ -59,6 +59,12 @@ process {
         New-ExternalHelp "$PSScriptRoot\..\Output\1.1.0\Docs" -OutputPath "$PSScriptRoot\..\Output\1.1.0\en-US\"
     }
 
+    task PublishPackage -If ($Configuration -eq 'Release') {
+        Write-Host "Would run the following to publish to the repo:"
+        Write-Host "`tRegister-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/V2/ -ScriptSourceLocation http://MyLocalNuget/Api/V2 -InstallationPolicy Trusted"
+        Write-Host "`tPublish-Module -Path `"$PSScriptRoot\..\Output\1.1.0\`" -Repository LocalPsRepo -NuGetApiKey `"YOURAPIKEY`""
+    }
+
     # Synopsis: run the full build pipeline.
-    task . Clean, LoadDependecies, Build, LoadModule, Test, Analyze, MakeHelp 
+    task . Clean, LoadDependecies, Build, LoadModule, Test, Analyze, MakeHelp, PublishPackage
 }
