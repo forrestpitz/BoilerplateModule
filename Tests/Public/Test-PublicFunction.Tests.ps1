@@ -1,4 +1,4 @@
-Describe "TestPublicFunction" {
+Describe "TestPublicFunction" -Tag "Unit" {
     Context "It handles string comparisons" {
 
         It "Returns true when the string was `"Forrest`"" {

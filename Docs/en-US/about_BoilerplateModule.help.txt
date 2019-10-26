@@ -7,6 +7,12 @@ SHORT DESCRIPTION
 LONG DESCRIPTION
     This module is designed to act as a blueprint for the structure and capabilities of a good powershell module
 
+    This module is designed to:
+    * Enforce well formatted and well documented code through script analysis
+    * Provide a framework for testing that code and easily confirming the code is being tested
+    * Provide a platform for "compiling" the code structure into a single module file to speed up module loading and prevent issues with powershell functionality like classes that don't play well with multi-file modules
+    * Provide a directory structure that promotes easy location of a given function while still allowing function grouping.
+
     To get started run Install-Prerequisites.ps1 which will install Invoke-Build and PSDepend. All other dependencies will be bootstrapped by those packages.
 
     To "compile" the module just run `"Build.ps1`"
@@ -23,4 +29,4 @@ LONG DESCRIPTION
     * Code conforms to style guidelines laid out in https://github.com/PoshCode/PowerShellPracticeAndStyle
 
 KEYWORDS
-BestPractices 
+BestPractices, ModuleConstruction

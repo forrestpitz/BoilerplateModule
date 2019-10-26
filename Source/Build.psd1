@@ -5,5 +5,5 @@
     # Subsequent relative paths are to the ModuleManifest
     OutputDirectory          = "../"
     VersionedOutputDirectory = $true
-    CopyDirectories          = @('en-US')
+    CopyDirectories          = @("../Docs/en-US")
 }
